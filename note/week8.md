@@ -1,35 +1,19 @@
-## glib
-用鏈結串列時，已經不需要再自己對指標(Pointer)做許多低階的處理
-範例程式 glist.c
-```
-/* Compile with:
-export CFLAGS="`pkg-config --cflags glib-2.0` -g -Wall -std=gnu11 -O3"
-export LDLIBS="`pkg-config --libs   glib-2.0`"
-make glist
-*/
-#include <stdio.h>
-#include <glib.h>
+## 五子棋 AI 算法
+五子棋是一個雙方對弈的遊戲，我們稱執黑子的一方為“黑方”，執白子的一方為“白方”。對於當前棋局，我們的目的是找到一個最佳的落子點，使得我方的勝算最大。這也是本算法的目的，確定下一步的落子點，使得我方勝算最大。為了判斷到底落子何處才能使勝算最大，我們需要往後多推算幾步，包括推算我方落子和對方落子，模擬出可能出現的棋局，從這些棋局中選出勝算最大的那個棋局，進而確定下一步的最佳落子點。
 
-GList *list;
+![p](https://github.com/zxc21949049/ai109b/blob/main/pp/ppw801.png)
+![p](https://github.com/zxc21949049/ai109b/blob/main/pp/ppw802.png)
 
-int main(){
-    list = g_list_append(list, "a");
-    list = g_list_append(list, "b");
-    list = g_list_append(list, "c");
-    printf("The list is now %d items long\n", g_list_length(list));
+Alpha Beta 剪枝原理
+Alpha Beta 剪枝算法的基本依據是：棋手不會做出對自己不利的選擇。依據這個前提，如果一個節點明顯是不利於自己的節點，那麼就可以直接剪掉這個節點。
 
-    for ( ; list!= NULL; list=list->next)
-        printf("%s\n", (char*)list->data);
+![p](https://github.com/zxc21949049/ai109b/blob/main/pp/ppw803.png)
 
-    printf("The list is now %d items long\n", g_list_length(list));
-}
-```
+如上圖所示，在第二層，也就是MIN層，當計算到第三個節點的時候，已知前面有一個3和一個6，也就是最小值為3。在計算第三個節點的時候，發現它的第一個孩子的結果是5，因為它的孩子是MAX節點，而MAX節點是會選擇最大值的，那麼此節點的值不會比5小，因此此節點的後序孩子就沒有必要計算了，因為這個節點不可能小於5，而同一層已經有一個值為3的節點了。
 
-## pkg-config
-pkg-config 是一個在原始碼編譯時查詢已安裝的函式庫的使用介面的電腦工具軟體。
-C/C++編譯器需要的輸入參數
-連結器需要的輸入參數
-已安裝軟體包的版本資訊
-## POSIX (Portable Operating System Interface)(可移植作業系統介面)
-IEEE為要在各種UNIX作業系統上執行軟體，而定義API的一系列互相關聯的標準的總稱。
-正式稱呼為IEEE Std 1003，而國際標準名稱為ISO/IEC 9945。
+其實這個圖裡面第三層分數為7的節點也是不需要計算的。
+
+這是MAX 節點的剪枝，MIN節點的剪枝也是同樣的道理，就不再講了。Alpha Beta 剪枝的Alpha 和Beta 分別指的是MAX 和MIN節點。
+————————————————
+版权声明：本文为CSDN博主「lihongxun945」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/lihongxun945/article/details/50668253
