@@ -36,12 +36,4 @@ Mortal(Socrates)Mortal(Socrates)Mortal(Socrates) ; 蘇格拉底會死。
 ∃x(Person(x)∧∀y(Time(y)=>Canfool(x,y))).\exists x (Person(x) \wedge \forall y (Time(y) => Canfool(x,y))).∃x(Person(x)∧∀y(Time(y)=>Canfool(x,y))).
 
 
-二階邏輯 (Second-Order Logic)
-如果一階邏輯中的謂詞，放寬成可以是變項的話 (這些變項可以加上 ∀\forall∀ 與 ∃\exists∃ 等符號的約束)，那就變成了二階邏輯，以下是一些二階邏輯的規則範例。
-
-∃P(P(x)∧P(y)).\exists P (P(x) \wedge P(y)).∃P(P(x)∧P(y)).
-∀P∀x(x∈P∣x∉P).\forall P \forall x (x \in P | x \notin P).∀P∀x(x∈P∣x∈/P).
-∀P(P(0)∧∀y(P(y)=>P(succ(y)))=>∀yP(y)).\forall P (P(0) \wedge \forall y( P(y)=>P(succ(y)) ) => \forall y P(y) ).∀P(P(0)∧∀y(P(y)=>P(succ(y)))=>∀yP(y)).
-
-(最後一條是《數學歸納法》規則)
-對於上述這些邏輯系統而言，描述能力愈強大者，通常也愈複雜，而且《公理系統》與《推論的複雜度》也會提高，要建構出《很完美的數學體系》，難度也就愈來愈高了！
+http://programmermedia.org/root/%E9%99%B3%E9%8D%BE%E8%AA%A0/%E8%AA%B2%E7%A8%8B/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7/04-logic/%E9%82%8F%E8%BC%AF%E6%8E%A8%E8%AB%96%E8%88%87%E5%B0%88%E5%AE%B6%E7%B3%BB%E7%B5%B1.md

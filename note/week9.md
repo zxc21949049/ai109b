@@ -11,7 +11,7 @@
 ## 練習
 * diff.py
 ```
-PS C:\Users\rick2\ai\07-neural\02-gradient\01-diff> python diff.py
+PS C:\Users\USER\ai\07-neural\02-gradient\01-diff> python diff.py
 diff(f,2)= 4.000999999999699
 ```
 * e.py
