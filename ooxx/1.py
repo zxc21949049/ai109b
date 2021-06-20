@@ -1,6 +1,7 @@
 import itertools
 import numpy as np
-import cv2  #pip install opencv-python
+import cv2
+#pip install opencv-python
 
 play1 = 1
 play2 = 2
