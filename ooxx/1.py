@@ -180,4 +180,4 @@ cv2.imshow("test", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-#YT教學:https://www.youtube.com/watch?v=ESyTr-Ol-nY&t=116s
+#參考:https://github.com/kmolLin/yt_code_share/tree/master/dqnlearn
