@@ -19,7 +19,8 @@ def tableNext(n, p):
         #print(p)
 truthTable(2) 
 
-## 結果
+
+
 ```
 [0, 0]
 [0, 1]
